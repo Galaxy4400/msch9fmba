@@ -1,0 +1,15 @@
+<nav class="pagging">
+	<!--%if prev%-->
+	<a class="pagging__arrow pagging__arrow_prev" href="<!--%prev%-->">←</a>
+	<!--%end if prev%-->
+	<ul class="pagging__list">
+		<!--%loop paggination%-->
+		<li class="pagging__item <!--%class%-->">
+			<a class="pagging__link <!--%class%-->" href="<!--%link%-->"><!--%name%--></a>
+		</li>
+		<!--%end loop paggination%-->
+	</ul>
+	<!--%if next%-->
+	<a class="pagging__arrow pagging__arrow_next" href="<!--%next%-->">→</a>
+	<!--%end if next%-->
+</nav>

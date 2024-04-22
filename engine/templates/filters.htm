@@ -1,0 +1,83 @@
+<div class="filters">
+	<div class="filters__title">Подбор по параметрам:</div>
+	<div class="filters__numeric filters-numeric">
+		<!--%loop numeric%-->
+		<div class="filters-numeric__item">
+			<div class="filters-numeric__name"><!--%pname%-->:</div>
+			<div class="filters-numeric__value">
+				<div class="filters-numeric__inputs">
+					<input class="input" type="text" name="p<!--%__id%-->_min" value="<!--%entered_min%-->" placeholder="<!--%default_min%-->"> -
+					<input class="input" type="text" name="p<!--%__id%-->_max" value="<!--%entered_max%-->" placeholder="<!--%default_max%-->">
+				</div>
+				<div class="filters-numeric__slider" data-id="<!--%__id%-->"></div>
+			</div>
+		</div>
+		<!--%end loop numeric%-->
+	</div>
+	<div class="filters__checks filters-checks">
+		<!--%loop nonNumeric%-->
+		<div class="filters-checks__item">
+			<div class="filters-checks__name"><!--%pname%-->:</div>
+			<div class="filters-checks__value">
+				<!--%loop values%-->
+				<label class="filters-checks__checkbox checkbox">
+					<input class="checkbox__input _arg" type="checkbox" name="p<!--%pid%-->[]" value="<!--%PropertyValue%-->" <!--%checked%-->>
+					<span class="checkbox__appearance"><!--%PropertyValue%--></span>
+				</label>
+				<!--%end loop values%-->
+			</div>
+		</div>
+		<!--%end loop nonNumeric%-->
+	</div>
+	<div class="filters__button">
+		<a class="filters__btn btn btn_gray" href="./?cid=<!--%catID%-->">Сбросить</a>
+		<button class="filters__btn btn" type="submit">Подобрать</button>
+	</div>
+</div>
+
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		//range
+		const priceSliders = document.querySelectorAll('.filters-numeric__slider');
+
+		if (priceSliders) {
+
+			priceSliders.forEach(slider => {
+				const sliderID = parseInt(slider.dataset.id);
+				let priceMin = document.querySelector(`[name="p${sliderID}_min"]`);
+				let priceMax = document.querySelector(`[name="p${sliderID}_max"]`);
+				let defaultMin = parseInt(priceMin.getAttribute("placeholder"));
+				let defaultMax = parseInt(priceMax.getAttribute("placeholder"));
+				let currentMin = parseInt(priceMin.value) ? parseInt(priceMin.value) : defaultMin;
+				let currentMax = parseInt(priceMax.value) ? parseInt(priceMax.value) : defaultMax;
+
+				noUiSlider.create(slider, {
+					start: [currentMin, currentMax],
+					connect: true,
+					range: {
+						'min': defaultMin,
+						'max': defaultMax
+					}
+				});
+
+				if (priceMin && priceMax) {
+					slider.noUiSlider.on('update', function (values, handle) {
+						if (handle) {
+							priceMax.value = parseInt(values[handle]);
+						} else {
+							priceMin.value = parseInt(values[handle]);
+						}
+					});
+					priceMin.addEventListener('keyup', function () {
+						slider.noUiSlider.set([this.value, null]);
+					});
+					priceMax.addEventListener('keyup', function () {
+						slider.noUiSlider.set([null, this.value]);
+					});
+				}
+				
+			});
+		}
+	});
+</script>

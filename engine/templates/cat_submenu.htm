@@ -1,0 +1,11 @@
+<button class="cat-menu__arrow _icon-arrow-down _active" type="button" data-spoller></button>
+<ul class="cat-menu__sub-list <!--%if level%-->cat-menu__sub-list_level<!--%end if level%-->">
+	<!--%loop menu%-->
+	<li class="cat-menu__sub-item">
+		<a class="cat-menu__sub-link <!--%active%--> <!--%emphasise%-->" href="<!--%href%-->"><!--%name%--> 
+			<!--%if itemsCount%--><span class="cat-menu__count"><!--%itemsCount%--></span><!--%end if itemsCount%-->
+		</a>
+		<!--%submenu%-->
+	</li> 
+	<!--%end loop menu%-->
+</ul>

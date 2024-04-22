@@ -1,0 +1,63 @@
+<form class="order-form _goto-error" action="./" method="post" name="orderFrm" id="orderFrm" enctype="multipart/form-data">
+	<input type="hidden" name="action" value="order">
+	<input class="input" type="hidden" name="subAction" value="process">
+
+	<div class="order-form__body">
+		<label class="order-form__input">
+			<div class="order-form__label">Имя</div>
+			<input class="input _req" type="text" name="Name" value="<!--%Name%-->">
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Фамилия</div>
+			<input class="input" type="text" name="Surname" value="<!--%Surname%-->"> 
+		</label>
+		<label class="order-form__input order-form__input_big">
+			<div class="order-form__label">Название компании (необязательно)</div>
+			<input class="input" type="text" name="CompanyName" value="<!--%CompanyName%-->">
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Страна / Регион</div>
+			<input class="input" type="text" name="Country" value="<!--%Country%-->"> 
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Область / Район</div>
+			<input class="input" type="text" name="Area" value="<!--%Area%-->"> 
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Населенный пункт</div>
+			<input class="input" type="text" name="City" value="<!--%City%-->"> 
+		</label>
+		<label class="order-form__input order-form__input_big">
+			<div class="order-form__label">Адрес</div>
+			<input class="input" type="text" name="Address" value="<!--%Address%-->">
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Почтовый индекс</div>
+			<input class="input" type="text" name="Zip" value="<!--%Zip%-->"> 
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Телефон</div>
+			<input class="input _req _phone" type="text" name="Phone" value="<!--%Phone%-->">
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">E-mail</div>
+			<input class="input _req _email" type="text" name="Email" value="<!--%Email%-->">
+		</label>
+		<label class="order-form__checkbox order-form__checkbox_big checkbox">
+			<input class="checkbox__input" type="checkbox" name="Register" value="1">
+			<span class="checkbox__appearance">Зарегистрировать Вас?</span>
+		</label>
+		<label class="order-form__checkbox order-form__checkbox_big checkbox">
+			<input class="checkbox__input" type="checkbox" name="AltAddress" value="1">
+			<span class="checkbox__appearance">Доставка по другому адресу?</span>
+		</label>
+		<label class="order-form__input order-form__input_big">
+			<div class="order-form__label">Примечание к заказу (необязательно)</div>
+			<textarea class="input" name="Comments"><!--%Comments%--></textarea>
+		</label>
+		<div class="order-form__bottom">
+			<button class="order-form__btn btn" type="submit">Подтвердить заказ</button>
+		</div>
+	</div>
+	
+</form>

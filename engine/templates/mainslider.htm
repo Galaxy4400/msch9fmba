@@ -1,0 +1,34 @@
+<section class="page__slider main-slider">
+	<div class="main-slider__container _container">
+		<h2 class="main-slider__title _semantic-hidden">Слайдер</h2>
+		<div class="main-slider__plug _ibg">
+			<picture>
+				<source srcset="<!--%firstSlideSmall%-->" media="(max-width: 767px)">
+				<img src="<!--%firstSlideBig%-->" alt="Слайдер">
+			</picture>
+		</div>
+		<div class="main-slider__body" data-swiper>
+			<div class="main-slider__items">
+				<!--%loop slides%-->
+				<article class="main-slider__slide main-slider-slide">
+					<div class="main-slider-slide__content">
+						<h2 class="main-slider-slide__title"><!--%name%--></h2>
+						<p class="main-slider-slide__text"><!--%desc%--></p>
+						<!--%if href%-->
+						<a class="main-slider-slide__btn btn" href="<!--%href%-->">Подробнее</a>
+						<!--%end if href%-->
+					</div>
+					<figure class="main-slider-slide__bg _ibg">
+						<picture>
+							<source srcset="<!--%small_img%-->" media="(max-width: 767px)">
+							<img src="<!--%big_img%-->" alt="">
+						</picture>
+					</figure>
+					<div class="main-slider-slide__pagging-text"><!--%pagin%--></div>
+				</article>
+				<!--%end loop slides%-->
+			</div>
+		</div>
+		<ul class="main-slider__pagination"></ul>
+	</div>
+</section>

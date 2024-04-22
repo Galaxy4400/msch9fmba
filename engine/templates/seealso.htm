@@ -1,0 +1,32 @@
+<div class="seealso">
+	<div class="seealso__title">Смотрите также</div>
+	<div class="seealso__slider seealso-slider _slider">
+		<div class="seealso-slider__body _swiper">
+			<!--%loop items%-->
+			<div class="seealso-slider__item">
+				<form class="product-card" action="#" method="post">
+					<a class="product-card__img" href="<!--%href%-->">
+						<img src="<!--%img%-->" alt="">
+					</a>
+					<div class="product-card__content">
+						<a class="product-card__title" href="<!--%href%-->">
+							<!--%name%-->
+						</a>
+					</div>
+					<div class="product-card__price">
+						<div class="price"><span class="price__number"><!--%price%--></span> <!--%if isPrice%--><span class="price__cur">руб</span>.<!--%end if isPrice%--></div>
+					</div>
+					<div class="product-card__bottom">
+						<div class="product-card__btn btn btn_light _icon-cart" onclick="doAddToCart('<!--%id%-->')">в корзину</div>
+					</div>
+				</form>
+			</div>
+			<!--%end loop items%-->
+		</div>
+		<div class="seealso-slider__arrows seealso-slider-arrows">
+			<div class="seealso-slider-arrows__arrow seealso-slider-arrows__arrow_prev"><span class="_icon-arrow-left"></span></div>
+			<div class="seealso-slider-arrows__arrow seealso-slider-arrows__arrow_next"><span class="_icon-arrow-right"></span></div>
+		</div>
+		<!-- <div class="seealso-slider__pagging slider-pagging"></div> -->
+	</div>
+</div>

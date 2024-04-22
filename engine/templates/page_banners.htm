@@ -1,0 +1,33 @@
+<section class="page__actions page-actions">
+	<div class="page-actions__container _container">
+		<h2 class="page-actions__title _semantic-hidden">Баннеры</h2>
+		<div class="page-actions__services">
+			<!--%loop bigBanners%-->
+			<article class="page-actions__service service-card">
+				<div class="service-card__content">
+					<h3 class="service-card__title"><!--%title%--></h3>
+					<p class="service-card__text"><!--%desc%--></p>
+					<!--%if href%-->
+					<a class="service-card__btn btn" href="<!--%href%-->">подробнее</a>
+					<!--%end if href%-->
+				</div>
+				<div class="service-card__img _ibg">
+					<img src="<!--%img%-->" alt="">
+				</div>
+			</article>
+			<!--%end loop bigBanners%-->
+		</div>
+		<div class="page-actions__banners">
+			<!--%loop smallBanners%-->
+			<article class="page-actions__banner banner">
+				<h3 class="banner__title _semantic-hidden"><!--%title%--></h3>
+				<a <!--%if href%-->href="<!--%href%-->"<!--%end if href%-->>
+					<figure class="banner__img">
+						<img src="<!--%img%-->" alt="">
+					</figure>
+				</a>
+			</article>
+			<!--%end loop smallBanners%-->
+		</div>
+	</div>
+</section>

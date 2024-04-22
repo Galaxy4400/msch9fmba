@@ -1,0 +1,31 @@
+<div class="order">
+	<div class="order__form">
+		<!--%form%-->
+	</div>
+	<div class="order__info">
+		<div class="order-info">
+			<div class="order-info__title">Состав заказа:</div>
+			<div class="order-info__items">
+				<!--%loop items%-->
+				<div class="order-info__item order-info-item">
+					<div class="order-info-item__no"><!--%no%-->.</div>
+					<div class="order-info-item__info">
+						<span class="order-info-item__title"><!--%Name%--></span><br>
+						<span class="order-info-item__qty"><!--%qty%--> шт.</span> на 
+						<span class="order-info-item__price"><!--%multyPriceFormat%--> р.</span>
+					</div>
+				</div>
+				<!--%end loop items%-->
+			</div>
+			<div class="order-info__result order-info-result">
+				<div class="order-info-result__title">Итого:</div>
+				<div class="order-info-result__info">
+					<span class="order-info-result__qty"><!--%count%--></span> <!--%productWord%--> на <span class="order-info-result__price"><!--%totalCost%--> р.</span>
+				</div>
+			</div>
+			<div class="order-info__bottom">
+				<a class="order-info__btn btn btn_white" href="<!--%dir_prefix%-->cart/">Изменить заказ</a>
+			</div>
+		</div>
+	</div>
+</div>

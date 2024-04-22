@@ -1,0 +1,91 @@
+<!--%if items%-->
+<div class="doctor-container">
+	<!--%loop items%-->
+	<div class="doctor _active" data-category="<!--%category%-->" data-surname="<!--%surname%-->" id="<!--%id%-->">
+		<div class="doctor-wrap manager-wrap">
+			<a href="<!--%href%-->" class="doctor-photo">
+				<img src="<!--%img%-->" alt="<!--%name%-->">
+			</a>
+			<div class="doctor-info">
+				<a href="<!--%href%-->" class="doctor-info__name"><!--%name%--></a>
+				<div class="doctor-info__specialty"><!--%specialty%--></div>
+	
+				<!--%if experience%-->
+				<div class="doctor-info__experience">Стаж: <span><!--%experience%--></span></div>
+				<!--%end if experience%-->
+	
+				<!--%if regalia%-->
+				<div class="doctor-info__regalia">
+					<img src="../../images/img/icons/regalia.png" alt="" class="doctor-info__regalia-img">
+					<div class="doctor-info__regalia-list">
+						<!--%regalia%-->
+					</div>
+				</div>
+				<!--%end if regalia%-->
+	
+				<div class="doctor-info__descr">
+					<!--%smallDesc%-->
+				</div>
+
+				<div class="manager-appointment">
+					<a href="<!--%href%-->" class="header-bottom__btn btn btn_big">Подробнее</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--%end loop items%-->
+</div>
+<!--%end if items%-->
+
+<script>
+	const categoryPicker = document.querySelector('#category-picker');
+	const surnameSearch = document.querySelector('#surname-search');
+	const doctors = document.querySelectorAll('.doctor');
+
+	function showDoctor(doctor) {
+		if (!doctor.classList.contains('_active')) {
+			doctor.classList.add('_active');
+		}
+	}
+	function hideDoctor(doctor) {
+		doctor.classList.remove('_active');
+	}
+
+	function switcher(category, surname) {
+		if (category === 'Все специальности' && surname === '') {
+			doctors.forEach(doctor => showDoctor(doctor));
+			
+		} else {
+			doctors.forEach(doctor => {
+				hideDoctor(doctor);
+
+				if (category === 'Все специальности' && surname !== '') {
+					if ((doctor.dataset.surname).includes(surname)) {
+					showDoctor(doctor);
+					}
+				} else if (category !== 'Все специальности' && surname === '') {
+					if(doctor.dataset.category === categoryPicker.value) {
+					showDoctor(doctor);
+					}
+				} else {
+					if(doctor.dataset.category === categoryPicker.value && (doctor.dataset.surname).includes(surname)) {
+					showDoctor(doctor);
+					}
+				}
+			});
+		}
+	}
+
+	categoryPicker.addEventListener('change', function() {
+		switcher(categoryPicker.value, surnameSearch.value);
+	});
+
+
+	surnameSearch.addEventListener('input', function() {
+		switcher(categoryPicker.value, surnameSearch.value);
+	})
+
+	function doForm(e) {
+		e.preventDefault();
+	}
+</script>

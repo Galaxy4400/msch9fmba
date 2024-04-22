@@ -1,0 +1,57 @@
+<div class="shops">
+	<div class="shops__column">
+		<div class="shops__info">
+			<div class="shops-search">
+				<input class="shops-search__input input" type="text" placeholder="Поиск">
+				<button class="shops-search__btn btn _icon-search" type="button"></button>
+			</div>
+			<div class="shops-map">
+				<div class="shops-map__frame"></div>
+			</div>
+		</div>
+	</div>
+	<div class="shops__column">
+		<div class="shops__actions">
+			<div class="shops-cities">
+				<select class="shops-cities__select" id="shops-city" name="city">
+					<option value="">Все</option>
+					<!--%loop countries%-->
+					<optgroup label="<!--%name%-->">
+						<!--%loop cities%-->
+						<option value="<!--%name%-->" <!--%selected%-->><!--%name%--></option>
+						<!--%end loop cities%-->
+					</optgroup>
+					<!--%end loop countries%-->
+				</select>
+			</div>
+			<!--%shops_list%-->
+		</div>
+	</div>
+</div>
+	
+	
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", () => {
+		let shopsSelector = new Choices('.shops-cities__select', {
+			itemSelectText: '',
+			noResultsText: 'Ничего не найдено',
+		});
+
+		var markers = [<!--%shops_markers%-->];
+		shops.mapInit(markers); 
+		document.querySelector(".shops-cities__select").onchange = shops.updateView;
+		document.querySelector('.shops-search__btn').onclick = shops.updateView;
+		document.querySelector('.shops-search__input').onkeyup = (event) => {
+			var keycode = (event.keyCode ? event.keyCode : event.which);
+			if(keycode == '13')
+				shops.updateView();
+		};
+	});
+	
+	document.querySelector('.shops-list').onclick = (e) => {
+		if (e.target.closest('.shops-list__go-to-marker')) {
+			shops.triggerMarker(e.target.getAttribute('data-marker-id'));
+		}
+	}
+
+</script>

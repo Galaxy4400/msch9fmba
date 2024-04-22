@@ -1,0 +1,57 @@
+
+//===============================================================
+._semantic-hidden {
+	position: absolute;
+	height: 0;
+	width: 0;
+	font-size: 0;
+	opacity: 0;
+	visibility: hidden;
+}
+
+//===============================================================
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+//===============================================================
+._video {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 56.25%;
+	box-shadow: 0px 0px 38px -4px rgb(0 0 0 / 25%);
+	border-radius: rem(10);
+	video,
+	iframe,
+	object,
+	embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+//===============================================================
+%graystyle {
+	transition: all 0.3s ease 0s;
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+}
+%graystyleoff {
+	filter: grayscale(0);
+	-webkit-filter: grayscale(0);
+	-moz-filter: grayscale(0);
+	-o-filter: grayscale(0);
+}
+//===============================================================

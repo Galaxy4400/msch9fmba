@@ -1,0 +1,74 @@
+<form action="./" method="get" name="filterform" id="filterform" onsubmit="processFilters()">
+	<input type="hidden" name="cid" value="<!--%cid%-->">
+	<input type="hidden" name="p" value="<!--%p%-->">
+
+	<!--%filters%-->
+
+	<div class="filter-actions">
+		
+		<div class="filter-actions__top">
+			<div class="filter-actions__specials filter-specials">
+				<!--%loop types%-->
+				<label class="filter-specials__checkbox checkbox">
+					<input class="checkbox__input" type="checkbox" name="type[]" value="<!--%id%-->" <!--%checked%-->>
+					<span class="checkbox__appearance btn btn_gray"><!--%name%--></span>
+				</label>
+				<!--%end loop types%-->
+			</div>
+		</div>
+
+		<div class="filter-actions__bottom">
+			<div class="filter-actions__sort filter-sort">
+				<div class="filter-sort__title">Сортировать:</div>
+				<!--%loop sorts%-->
+				<label class="filter-sort__radiobutton radiobutton">
+					<input class="radiobutton__input" type="radio" name="sort" value="<!--%id%-->" <!--%checked%-->>
+					<span class="radiobutton__appearance"><!--%name%--></span>
+				</label>
+				<!--%end loop sorts%-->
+			</div>
+
+			<select class="filter-actions__show" name="show">
+				<!--%loop show%-->
+				<option value="<!--%value%-->" <!--%selected%-->>Показать по <!--%value%--></option>
+				<!--%end loop show%-->
+			</select>
+		</div>
+
+	</div>
+</form>
+
+
+
+
+
+<!-- =============================================================== -->
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		let itemPerPageSelector = new Choices('.filter-actions__show', {
+			searchEnabled: false,
+			itemSelectText: '',
+		});
+	});
+
+
+	let filterActionInputs = document.querySelectorAll('.filter-actions input, .filter-actions select');
+	let filterForm = document.querySelector('#filterform');
+	filterActionInputs.forEach(inp => {
+		inp.onchange = () => {
+			processFilters();
+			filterForm.submit();
+		} 
+	});
+
+	function processFilters() {
+		const numInputs = document.querySelectorAll('.filters-numeric__inputs input');
+		for (const inp of numInputs) {
+			const defVal = inp.getAttribute("placeholder");
+			const setVal = inp.value;
+			if (defVal == setVal) {
+				inp.value = "";
+			}
+		}
+	}
+</script>

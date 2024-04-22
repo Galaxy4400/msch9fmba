@@ -1,0 +1,98 @@
+<div class="page__catalog main-catalog _tabs">
+
+	<div class="main-catalog__actions main-catalog-actions">
+		<button class="main-catalog-actions__button btn _tab-item _active" type="button">Хиты продаж</button>
+		<button class="main-catalog-actions__button btn _tab-item" type="button">Новинки каталога</button>
+		<button class="main-catalog-actions__button btn _tab-item" type="button">Распродажа</button>
+	</div>
+
+	<div class="main-catalog__block _tab-block _active">
+		<div class="main-catalog__body">
+			<!--%loop hit%-->
+			<div class="catalog__item product-card">
+				<div class="product-card__tags tags">
+					<!--%if newTag%--><div class="tags__tag tags__tag_new">new</div><!--%end if newTag%-->
+					<!--%if hitTag%--><div class="tags__tag tags__tag_hit">хит</div><!--%end if hitTag%-->
+					<!--%if saleTag%--><div class="tags__tag tags__tag_sale">sale</div><!--%end if saleTag%-->
+				</div>
+				<a class="product-card__img" href="<!--%href%-->">
+					<img src="<!--%img%-->" alt="">
+				</a>
+				<div class="product-card__content">
+					<a class="product-card__title" href="<!--%href%-->"><!--%name%--></a>
+				</div>
+				<div class="product-card__price">
+					<div class="price"><span class="price__number"><!--%price%--></span> <!--%if isPrice%--><span class="price__cur">руб</span>.<!--%end if isPrice%--></div>
+				</div>
+				<div class="product-card__bottom">
+					<button class="product-card__btn btn btn_light _icon-cart" onclick="doAddToCart('<!--%id%-->')">в корзину</button>
+				</div>
+			</div>
+			<!--%end loop hit%-->
+		</div>
+		<div class="main-catalog__bottom">
+			<a class="main-catalog__btn btn btn_white" href="<!--%dir_prefix%-->cat/">Все хиты <span class="_icon-arrow"></span></a>
+		</div>
+	</div>
+
+	<div class="main-catalog__block _tab-block">
+		<div class="main-catalog__body">
+			<!--%loop new%-->
+			<div class="catalog__item product-card">
+				<div class="product-card__tags tags">
+					<!--%if newTag%--><div class="tags__tag tags__tag_new">new</div><!--%end if newTag%-->
+					<!--%if hitTag%--><div class="tags__tag tags__tag_hit">хит</div><!--%end if hitTag%-->
+					<!--%if saleTag%--><div class="tags__tag tags__tag_sale">sale</div><!--%end if saleTag%-->
+				</div>
+				<a class="product-card__img" href="<!--%href%-->">
+					<img src="<!--%img%-->" alt="">
+				</a>
+				<div class="product-card__content">
+					<a class="product-card__title" href="<!--%href%-->"><!--%name%--></a>
+				</div>
+				<div class="product-card__price">
+					<div class="price"><span class="price__number"><!--%price%--></span> <!--%if isPrice%--><span class="price__cur">руб</span>.<!--%end if isPrice%--></div>
+				</div>
+				<div class="product-card__bottom">
+					<button class="product-card__btn btn btn_light _icon-cart" onclick="doAddToCart('<!--%id%-->')">в корзину</button>
+				</div>
+			</div>
+			<!--%end loop new%-->
+		</div>
+		<div class="main-catalog__bottom">
+			<a class="main-catalog__btn btn btn_white" href="<!--%dir_prefix%-->cat/">Все новинки <span class="_icon-arrow"></span></a>
+		</div>
+	</div>
+
+	<div class="main-catalog__block _tab-block">
+		<div class="main-catalog__body">
+			<!--%loop sale%-->
+			<div class="catalog__item product-card">
+				<div class="product-card__tags tags">
+					<!--%if newTag%--><div class="tags__tag tags__tag_new">new</div><!--%end if newTag%-->
+					<!--%if hitTag%--><div class="tags__tag tags__tag_hit">хит</div><!--%end if hitTag%-->
+					<!--%if saleTag%--><div class="tags__tag tags__tag_sale">sale</div><!--%end if saleTag%-->
+				</div>
+				<a class="product-card__img" href="<!--%href%-->">
+					<img src="<!--%img%-->" alt="">
+				</a>
+				<div class="product-card__content">
+					<a class="product-card__title" href="<!--%href%-->"><!--%name%--></a>
+				</div>
+				<div class="product-card__price">
+					<div class="price"><span class="price__number"><!--%price%--></span> <!--%if isPrice%--><span class="price__cur">руб</span>.<!--%end if isPrice%--></div>
+				</div>
+				<div class="product-card__bottom">
+					<button class="product-card__btn btn btn_light _icon-cart" onclick="doAddToCart('<!--%id%-->')">в корзину</button>
+				</div>
+			</div>
+			<!--%end loop sale%-->
+		</div>
+		<div class="main-catalog__bottom">
+			<a class="main-catalog__btn btn btn_white" href="<!--%dir_prefix%-->cat/">Распродажа <span class="_icon-arrow"></span></a>
+		</div>
+	</div>
+	
+</div>
+
+

@@ -1,0 +1,43 @@
+<form class="form" action="./" method="post" data-form data-send="ajax">
+	<input type="hidden" name="action" value="doPostForm">
+	<input type="hidden" name="mailSubject" value="Задан вопрос на сайте <!--%site_name%-->">
+	<input type="hidden" name="formid" value="<!--%form%-->">
+	<input type="hidden" name="id" value="<!--%id%-->">
+	<!-- <input type="hidden" name="siteKey" value="">
+	<input type="hidden" name="token" value=""> -->
+
+	<h3 class="form__title">Отправить обращение</h3>
+	<div class="form__body">
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Ваше имя<span>*</span></span>
+				<input class="input" type="text" name="Name" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Ваш телефон<span>*</span>:</span>
+				<input class="input" type="tel" name="Phone" data-required data-mask="+7 (999) 999-9999" data-mask-placeholder="_">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Ваш E-mail:</span>
+				<input class="input" type="email" name="Email">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Ваше сообщение<span>*</span>:</span>
+				<textarea class="input" name="Message" data-required></textarea>
+			</label>
+		</div>
+		<div class="form__column">
+			<div class="g-recaptcha" data-sitekey="<!--%key%-->"></div>
+		</div>
+		<div class="form__bottom">
+			<button class="form__button btn btn_green" type="button" data-close>Закрыть</button>
+			<button class="form__button btn" type="submit">Отправить</button>
+		</div>
+	</div>
+</form>

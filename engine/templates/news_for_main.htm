@@ -1,0 +1,33 @@
+<section class="page__news page-news">
+	<div class="page-news__container _container">
+		<header class="page-news__head">
+			<h3 class="page-news__title">Новости</h3>
+			<a class="page-news__more _icon-arrow" href="<!--%dir_prefix%-->news">Архив новостей</a>
+		</header>
+		<section class="page-news__slider news-slider">
+			<h2 class="news-slider__title _semantic-hidden">Слайдер новостей</h2>
+			<div class="news-slider__body" data-swiper>
+				<div class="news-slider__slides">
+					<!--%loop news%-->
+					<article class="news-slider__slide news-slide">
+						<div class="news-slide__content">
+							<h5 class="news-slide__title"><a href="<!--%href%-->"><!--%name%--></a></h5>
+							<div class="news-slide__bottom">
+								<time class="news-slide__date" datetime="<!--%dateFormat%-->"><!--%date%--></time>
+								<a class="news-slide__btn btn" href="<!--%href%-->">подробнее</a>
+							</div>
+						</div>
+						<a class="news-slide__img _ibg" href="<!--%href%-->">
+							<img src="<!--%img%-->" alt="<!--%name%-->">
+						</a>
+					</article>
+					<!--%end loop news%-->
+				</div>
+			</div>
+			<div class="news-slider__arrows news-slider-arrows">
+				<button class="news-slider-arrows__arrow news-slider-arrows__arrow_prev _icon-arrow-slide" type="button"></button>
+				<button class="news-slider-arrows__arrow news-slider-arrows__arrow_next _icon-arrow-slide" type="button"></button>
+			</div>
+		</section>
+	</div>
+</section>

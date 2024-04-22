@@ -1,0 +1,156 @@
+<form class="form form_attach" action="./" method="post" data-form>
+	<input type="hidden" name="action" value="doPostForm">
+	<input type="hidden" name="mailSubject" value="Прикрепление к <!--%site_name%-->">
+	<input type="hidden" name="formid" value="<!--%form%-->">
+	<input type="hidden" name="id" value="<!--%id%-->">
+	<!-- <input type="hidden" name="siteKey" value="">
+	<input type="hidden" name="token" value=""> -->
+
+	<div class="form__title">Предварительная заявка на прикрепление к ФБУЗ МСЧ №9 ФМБА России</div>
+	<div class="form__body">
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Фамилия<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Surname" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Имя<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Name" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<div class="form__group">
+				<input type="checkbox" value="Без отчества" name="NoPatron" data-check data-switcher="patron" data-label="Без отчества">
+			</div>
+		</div>
+		<div class="form__column" data-switch-rev="patron">
+			<label class="form__label">
+				<span class="form__label-title">Отчество<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Patron" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Дата рождения<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Birthday" data-required data-mask="99.99.9999" data-mask-placeholder="дд.мм.гггг">
+			</label>
+		</div>
+		<div class="form__column">
+			<div class="form__label-title">Пол:</div>
+			<div class="form__group">
+				<input type="radio" name="Sex" value="Мужчина" data-radio data-label="Муж." checked>
+				<input type="radio" name="Sex" value="Женщина" data-radio data-label="Жен.">
+			</div>
+		</div>
+		<div class="form__column">
+			<div class="form__label-title">Гражданство:</div>
+			<select class="form__selector" name="Country" data-choice data-search data-required data-placeholder="Поиск">
+				<option value="Российская Федерация" selected data-switcher="snils">Российская Федерация</option>
+				<option value="Белоруссия">Белоруссия</option>
+				<option value="Казахстан">Казахстан</option>
+				<option value="Украина">Украина</option>
+			</select>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Номер полиса ОМС<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Polis" data-required data-mask="9999999999999999" data-mask-placeholder="_" data-mask-between="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Наименование страховой компании Московской области<span>*</span>:</span>
+				<input class="form__input input" type="text" name="CompanyName" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Дата выдачи полиса<span>*</span>:</span>
+				<input class="form__input input" type="text" name="PolisStartDate" data-required data-mask="99.99.9999" data-mask-placeholder="дд.мм.гггг">
+			</label>
+		</div>
+		<div class="form__column">
+			<div class="form__label-title">Срок действия полиса:</div>
+			<div class="form__group">
+				<input type="radio" name="PolisType" value="Бессрочно" data-radio data-label="Бессрочно" checked>
+				<input type="radio" name="PolisType" value="" data-radio data-label="Дата окончания" data-switcher="polis">
+			</div>
+		</div>
+		<div class="form__column" data-switch="polis">
+			<label class="form__label">
+				<span class="form__label-title">Дата окончания полиса<span>*</span>:</span>
+				<input class="form__input input" type="text" name="PolisFinishDate" data-required data-mask="99.99.9999" data-mask-placeholder="дд.мм.гггг">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Вид документа:</span>
+				<select name="DocumentType" data-choice data-required>
+					<option value="Паспорт РФ" data-switcher="pasport" selected>Паспорт РФ</option>
+					<option value="Паспорт иностранного гражданина">Паспорт иностранного гражданина</option>
+					<option value="Вид на жительство">Вид на жительство</option>
+				</select>
+			</label>
+		</div>
+		<div class="form__column" data-switch="pasport">
+			<label class="form__label">
+				<span class="form__label-title">№ документа<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Pasport" data-required data-mask="9999 999999" data-mask-placeholder="_" data-mask-between="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Дата выдачи<span>*</span>:</span>
+				<input class="form__input input" type="text" name="DocumentDate" data-required data-mask="99.99.9999" data-mask-placeholder="дд.мм.гггг">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Кем выдан<span>*</span>:</span>
+				<input class="form__input input" type="text" name="DocumentBy" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column" data-switch="pasport">
+			<label class="form__label">
+				<span class="form__label-title">Код подразделения<span>*</span>:</span>
+				<input class="form__input input" type="text" name="PasportCode" data-required data-mask="999-999" data-mask-placeholder="_" data-mask-between="3">
+			</label>
+		</div>
+		<div class="form__column" data-switch="snils">
+			<label class="form__label">
+				<span class="form__label-title">СНИЛС<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Snils" data-required data-mask="999-999-999 99" data-mask-placeholder="_" data-mask-between="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Адрес регистрации<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Address" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Адрес проживания в г. Дубна Московской области<span>*</span>:</span>
+				<input class="form__input input" type="text" name="LivingAddress" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Номер телефона пациента<span>*</span>:</span>
+				<input class="form__input input" type="tel" name="Phone" data-required data-mask="+7 (999) 999-99-99" data-mask-placeholder="_" data-mask-between="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Адрес электронной почты<span></span>:</span>
+				<input class="form__input input" type="email" name="Email">
+			</label>
+		</div>
+		<div class="form__bottom">
+			<div class="g-recaptcha" data-sitekey="<!--%key%-->"></div>
+			<button class="form__button btn" type="submit">Отправить</button>
+		</div>
+	</div>
+</form>
