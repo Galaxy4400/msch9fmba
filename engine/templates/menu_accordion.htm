@@ -1,0 +1,17 @@
+<div class="menu menu-accordion">
+	<nav class="menu__body">
+		<ul class="menu__list">
+			<!--%loop menu%-->
+			<li class="menu__item <!--%active%-->">
+				<!--%if submenu%-->
+				<!--%end if submenu%-->
+				<button class="menu__link <!--%active%-->" data-control>
+					<a class="_anchor" href="<!--%href%-->"><!--%name%--></a>
+					<p></p>
+				</button>
+				<!--%submenu%-->
+			</li>	
+			<!--%end loop menu%-->
+		</ul>
+	</nav>
+</div>

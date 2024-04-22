@@ -1,0 +1,152 @@
+.modal {
+	--transition-time: 0.3s;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	background-color: rgba(0,0,0, 0.5);
+	cursor: pointer;
+	overflow-y: auto;
+	overflow-x: hidden;
+	text-align: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity var(--transition-time), visibility var(--transition-time);
+	&::before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	[data-modal] {
+		position: relative;
+		width: rem(900);
+		margin: 50px auto;
+		padding: 30px 50px;
+		display: none;
+		vertical-align: middle;
+		background-color: #fff;
+		border-radius: rem(20);
+		cursor: default;
+		text-align: left;
+		@media (max-width: ($md2+'px')) {
+			width: 90%;
+		}
+		@media (max-width: ($md4+'px')) {
+			width: 98%;
+			padding: 20px;
+		}
+		&.modal-open {
+			display: inline-block;
+		}
+
+		//---------------------------------------------------------------
+		// ANIMATIONS
+		&.fade {
+			opacity: 0;
+			transition: opacity var(--transition-time);
+		}
+		&.fade.animate-open {
+			opacity: 1;
+			transition: opacity var(--transition-time);
+		}
+
+		//---------------------------------------------------------------
+
+		&.fadeInUp {
+			opacity: 0;
+			transform: translateY(-100px) scale(0.95);
+			transition: opacity var(--transition-time), transform var(--transition-time);
+		}
+		&.fadeInUp.animate-open {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+			transition: opacity var(--transition-time), transform var(--transition-time);
+		}
+		//---------------------------------------------------------------
+
+		&.fadeInDown {
+			opacity: 0;
+			transform: translateY(100px) scale(0.95);
+			transition: opacity var(--transition-time), transform var(--transition-time);
+		}
+		&.fadeInDown.animate-open {
+			opacity: 1;
+			transform: translateY(0) scale(1);
+			transition: opacity var(--transition-time), transform var(--transition-time);
+		}
+
+		//---------------------------------------------------------------
+		
+		// add more...
+		
+		//---------------------------------------------------------------
+
+		& > [data-close]:first-child {
+			position: absolute;
+			top: rem(15);
+			right: rem(15);
+			font-size: rem(20);
+			color: var(--color-orange);
+			transition: all 0.3s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--color-orange-hover);
+				}
+			}
+		}
+
+	}
+}
+
+
+//===============================================================
+//												CUSTOM MODALS
+//===============================================================
+
+.modal-send-message {
+	max-width: rem(500);
+	// .modal-send-message__close
+	&__close {
+	}
+	// .modal-send-message__content
+	&__content {
+	}
+}
+
+//---------------------------------------------------------------
+
+.form-sended {
+	max-width: rem(400);
+	// .form-sended__close
+	&__close {
+	}
+	// .form-sended__content
+	&__content {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: rem(20);
+	}
+	// .form-sended__icon
+	&__icon {
+		border: 7px solid var(--color-green);
+		border-radius: 50%;
+		padding: 15px;
+		font-size: 80px;
+		color: var(--color-green);
+	}
+	// .form-sended__title
+	&__title {
+	}
+	// .form-sended__btn
+	&__btn {
+	}
+}

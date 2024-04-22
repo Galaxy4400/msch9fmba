@@ -1,0 +1,36 @@
+<div class="catalog">
+
+	<!--%filterForm%-->
+	
+	<!--%if items%-->
+	<div class="catalog__items">
+		<!--%loop items%-->
+		<div class="catalog__item product-card">
+			<div class="product-card__tags tags">
+				<!--%if newTag%--><div class="tags__tag tags__tag_new">new</div><!--%end if newTag%-->
+				<!--%if hitTag%--><div class="tags__tag tags__tag_hit">хит</div><!--%end if hitTag%-->
+				<!--%if saleTag%--><div class="tags__tag tags__tag_sale">sale</div><!--%end if saleTag%-->
+			</div>
+			<a class="product-card__img" href="<!--%href%-->">
+				<img src="<!--%img%-->" alt="">
+			</a>
+			<div class="product-card__content">
+				<a class="product-card__title" href="<!--%href%-->"><!--%name%--></a>
+			</div>
+			<div class="product-card__price">
+				<div class="price"><span class="price__number"><!--%price%--></span> <span class="price__cur">руб</span>.</div>
+			</div>
+			<div class="product-card__bottom">
+				<button class="product-card__btn btn btn_light _icon-cart" onclick="doAddToCart('<!--%id%-->')">в корзину</button>
+			</div>
+		</div>
+		<!--%end loop items%-->
+	</div>
+	<!--%end if items%-->
+
+	<!--%if pagination%-->
+	<div class="catalog__paggination">
+		<span>Страницы: </span><!--%pagination%-->
+	</div>
+	<!--%end if pagination%-->
+</div>

@@ -1,0 +1,142 @@
+.news {
+	// .news__categories
+	&__categories {
+		display: flex;
+		flex-wrap: wrap;
+		gap: rem(20);
+		margin: 0px 0px rem(40) 0px;
+	}
+	// .news__items
+	&__items {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: rem(50);
+	}
+	// .news__item
+	&__item {
+	}
+	// .news__head
+	&__head {
+		margin: 0px 0px rem(10) 0px;
+	}
+	// .news__date
+	&__date {
+		font-style: italic;
+		font-size: rem(14);
+		margin: 0px 0px rem(5) 0px;
+	}
+	// .news__title
+	&__title {
+		display: inline-block;
+		margin: 0px 0px rem(10) 0px;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-green);
+			}
+		}
+	}
+	// .news__body
+	&__body {
+		display: grid;
+		grid-template-columns: 1fr rem(400);
+		grid-gap: rem(20);
+		@media (max-width: em($md2, 16)) {
+			grid-template-columns: 1fr rem(250);
+		}
+		@media (max-width: em($md3, 16)) {
+			grid-template-columns: 1fr;
+		}
+
+		._blind & {
+			@media (max-width: em($md0, 16)) {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+	// .news__content
+	&__content {
+		@media (max-width: em($md3, 16)) {
+			order: 2;
+		}
+
+		._blind & {
+			@media (max-width: em($md0, 16)) {
+				order: 2;
+			}
+		}
+	}
+	// .news__desc
+	&__desc {
+		margin: 0px 0px rem(5) 0px;
+	}
+	// .news__link
+	&__link {
+		color: var(--color-green);
+		&::after {
+			content: "»";
+			margin: 0px 0px 0px rem(5);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-orange);
+			}
+		}
+	}
+	// .news__image
+	&__image {
+		justify-self: right;
+		img {
+			border-radius: rem(20);
+			overflow: hidden;
+			transition: all 0.5s ease 0s;
+			transform: scale(1.01);
+			@media (any-hover: hover) {
+				&:hover {
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		._blind & {
+			@media (max-width: em($md0, 16)) {
+				justify-self: left;
+			}
+		}
+	}
+}
+
+
+.new {
+	// .new__image
+	&__image {
+		margin: 0px 0px rem(20) 0px;
+		max-width: 500px;
+		img {
+			border-radius: rem(20);
+			overflow: hidden
+		}
+	}
+	// .new__date
+	&__date {
+		display: inline-block;
+		font-style: italic;
+		margin: 0px 0px rem(20) 0px;
+	}
+	// .new__body
+	&__body {
+		margin: 0px 0px rem(30) 0px;
+	}
+	// .new__back
+	&__back {
+		color: var(--color-green);
+		&::before {
+			content: "«";
+			margin: 0px 0px 0px rem(5);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-orange);
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+<div class="photos" data-gallery style="--column-count: <!--%columns%-->">
+	<!--%loop photos%-->
+	<div class="photos__photo">
+		<a href="<!--%bigURL%-->"><img src="<!--%smallURL%-->" alt="<!--%Name%-->"></a>
+		<!--%if isLabel%-->
+		<div class="photos__title"><!--%Name%--></div>
+		<!--%end if isLabel%-->
+	</div>
+	<!--%end loop photos%-->
+</div>
+<!--%pagination%-->

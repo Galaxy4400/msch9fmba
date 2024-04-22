@@ -1,0 +1,10 @@
+<nav class="breadcrumbs">
+	<ul class="breadcrumbs__list">
+		<!--%loop breadcrumbs%-->
+		<li class="breadcrumbs__item"><a class="breadcrumbs__link" href="<!--%href%-->" title="<!--%name%-->"><!--%name%--></a></li>
+		<!--%end loop breadcrumbs%-->
+		<!--%if current%-->
+		<li class="breadcrumbs__item"><span class="breadcrumbs__current" title="<!--%current%-->"><!--%current%--></span></li>
+		<!--%end if current%-->
+	</ul>
+</nav>

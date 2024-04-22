@@ -1,0 +1,33 @@
+<nav class="aside__menu aside-menu">
+	<!--%if category%-->
+	<div class="aside-menu__name" data-control><!--%category%--></div>
+	<!--%end if category%-->
+	<div class="aside-menu__name aside-menu__name-general" data-control>Меню</div>
+	<ul class="aside-menu__list" data-content>
+		<!--%loop items%-->
+		<li class="aside-menu__item <!--%class%-->">
+			<a class="aside-menu__link <!--%class%--> btn btn_white-b btn_big" href="<!--%href%-->"><!--%title%--></a>
+		</li>
+		<!--%end loop items%-->
+	</ul>
+</nav>
+
+<script>
+	const menuControlBtn = document.querySelector('[data-control]');
+	const asideMenuContent = document.querySelector('[data-content]');
+
+	menuControlBtn.addEventListener('click', function() {
+		this.classList.toggle('active');
+		asideMenuContent.click();
+
+		if (asideMenuContent.classList.contains('active')) {
+			asideMenuContent.classList.remove('active');
+		} else {
+			asideMenuContent.classList.add('active');
+		}
+	})
+
+	asideMenuContent.addEventListener('click', function(e) {
+	console.log('click');
+	})
+</script>

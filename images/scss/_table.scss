@@ -1,0 +1,21 @@
+.smart-room-table {
+   @media (max-width: ($md1+220+'px')) {
+      width: 100% !important;
+      & tr > td {
+         &:first-child {
+            width: 2rem !important;
+            max-width: 5rem !important;
+         }
+         &:last-child {
+            width: auto !important;
+            word-wrap: anywhere;
+         }
+      }
+      &__price {
+         border-top: 2px dotted rgba(132, 157, 158, 0.2);
+      }
+   }
+   .grey-row {
+      background-color: #f2f2f2;
+   }
+}

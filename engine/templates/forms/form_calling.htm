@@ -1,0 +1,74 @@
+<form class="form form_calling" action="./" method="post" data-form>
+	<input type="hidden" name="action" value="doPostForm">
+	<input type="hidden" name="mailSubject" value="Вызов врача на сайте <!--%site_name%-->">
+	<input type="hidden" name="formid" value="<!--%form%-->">
+	<input type="hidden" name="id" value="<!--%id%-->">
+	<!-- <input type="hidden" name="siteKey" value="">
+	<input type="hidden" name="token" value=""> -->
+
+	<h3 class="form__title">Заявки обрабатываются в рабочие дни с 8:00 до 16:00</h3>
+	<div class="form__body">
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Фамилия<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Surname" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Имя<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Name" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<div class="form__group">
+				<input type="checkbox" name="NoPatron" value="1" data-check data-switcher="patron" data-label="Без отчества">
+			</div>
+		</div>
+		<div class="form__column" data-switch-rev="patron">
+			<label class="form__label">
+				<span class="form__label-title">Отчество<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Patron" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Дата рождения<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Birthday" data-required data-mask="99.99.9999" data-mask-placeholder="дд.мм.гггг">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Адрес, куда вызвать врача<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Address" data-required data-min="3">
+			</label>
+		</div>
+		<div class="form__column">
+			<div class="form__group">
+				<input type="checkbox" name="IsCode" value="1" data-check data-switcher="code" data-label="Есть код/домофон">
+			</div>
+		</div>
+		<div class="form__column" data-switch="code">
+			<label class="form__label">
+				<span class="form__label-title">Код двери / Домофон<span>*</span>:</span>
+				<input class="form__input input" type="text" name="Code" data-required>
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Номер телефона пациента<span>*</span>:</span>
+				<input class="form__input input" type="tel" name="Phone" data-required data-mask="+7 (999) 999-9999" data-mask-placeholder="_">
+			</label>
+		</div>
+		<div class="form__column">
+			<label class="form__label">
+				<span class="form__label-title">Симптомы<span>*</span>:</span>
+				<textarea class="form__input input" name="Message" data-required></textarea>
+			</label>
+		</div>
+		<div class="form__bottom">
+			<div class="g-recaptcha" data-sitekey="<!--%key%-->"></div>
+			<button class="form__button btn" type="submit">Отправить</button>
+		</div>
+	</div>
+</form>

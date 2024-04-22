@@ -1,0 +1,24 @@
+<div class="cabinet-orders _content">
+	<table class="cabinet-orders__table" width='100%'>
+		<thead>
+			<tr>
+				<th width="1%" nowrap>Номер заказа</th>
+				<th nowrap>Дата / время</th>
+				<th width="1%" nowrap>Статус</th>
+				<th width="1%" nowrap>Сумма</th>
+				<th width="1%" nowrap>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--%loop orders%-->
+			<tr>
+				<td data-label="Номер заказа"><!--%__id%--></td>
+				<td data-label="Дата / время" nowrap><!--%DateTime%--></td>
+				<td data-label="Статус"><!--%Status%--></td>
+				<td data-label="Сумма" nowrap><!--%Total%--> руб.</td>
+				<td data-label=""><a href="./?action=cabinet&actionSub=order&oid=<!--%__id%-->">подробнее</a></td>
+			</tr>
+			<!--%end loop orders%-->
+		</tbody>
+	</table>
+</div>

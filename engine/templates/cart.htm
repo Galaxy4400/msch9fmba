@@ -1,0 +1,42 @@
+<div class="cart">
+	<div class="cart__items">
+		<!--%loop items%-->
+		<div class="cart__item cart-item" data-id="<!--%__id%-->">
+			<a class="cart-item__img" href="<!--%href%-->">
+				<img src="<!--%smallImage%-->" alt="">
+			</a>
+			<div class="cart-item__info">
+				<a class="cart-item__title" href="<!--%href%-->"><!--%Name%--></a>
+				<!-- <div class="cart-item__number"><span>Арт.</span> %Code%</div> -->
+			</div>
+			<div class="cart-item__quantity quantity">
+				<div class="quantity__button quantity__button_minus"></div>
+				<div class="quantity__input">
+					<input type="text" name="qty" data-value="<!--%qty%-->" value="<!--%qty%-->" autocomplete="off" maxlength="3">
+				</div>
+				<div class="quantity__button quantity__button_plus"></div>
+			</div>
+			<div class="cart-item__price">
+				<div class="price"><span class="price__number"><!--%priceFormat%--></span> <!--%if isPrice%--><span class="price__cur">руб</span>.<!--%end if isPrice%--></div>
+			</div>
+
+			<!-- <div class="cart-item__result-price">
+				<div class="price"><span class="price__number">%multyPriceFormat%</span> %if isPrice%<span class="price__cur">руб</span>.%end if isPrice%</div>
+			</div> -->
+
+			<button class="cart-item__delete" onclick="doDeleteFromCart('<!--%__id%-->')"><div class="cross"></div></button>
+		</div>
+		<!--%end loop items%-->
+	</div>
+
+	<div class="cart__bottom cart-bottom">
+		<div class="cart-bottom__result">
+			Итого товаров: <span class="cart-bottom__count"><!--%itemsCount%--></span> на
+			<div class="price"><span class="price__number"><!--%totalCost%--></span> <span class="price__cur">руб</span>.</div>
+		</div>
+		<div class="cart-bottom__label">Стоимость доставки будет рассчитана при оформлении заказа</div>
+		<div class="cart-bottom__button">
+			<a class="cart-bottom__btn btn" href="<!--%dir_prefix%-->order/">Оформить заказ</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,28 @@
+<div class="news">
+	<div class="news__categories">
+		<!--%loop categories%-->
+		<a class="btn <!--%class%-->" href="<!--%link%-->"><!--%name%--></a>
+		<!--%end loop categories%-->
+	</div>
+	<div class="news__items">
+		<!--%loop news%-->
+		<article class="news__item">
+			<div class="news__head">
+				<time class="news__date" datetime="<!--%DateFormat%-->"><!--%DateFull%--></time>
+			</div>
+			<div class="news__body">
+				<div class="news__content">
+					<h3 class="news__title"><a href="<!--%link%-->"><!--%Header%--></a></h3>
+					<p class="news__desc"><!--%Brief%--></p>
+					<a class="news__link" href="<!--%link%-->">подробнее</a>
+				</div>
+				<a class="news__image" href="<!--%link%-->">
+					<img src="<!--%smallImageURL%-->" alt="<!--%Header%-->">
+				</a>
+			</div>
+		</article>
+		<!--%end loop news%-->
+	</div>
+</div>
+
+<!--%pagination%-->

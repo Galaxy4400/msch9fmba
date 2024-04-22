@@ -1,0 +1,398 @@
+@import "mixins";
+@import "fonts";
+@import "icons";
+
+//<ШРИФТ>========================================================
+$fontFamily: "Roboto";
+
+//<ПЕРЕМЕННЫЕ>===================================================
+$containerWidth: 1540;
+$containerPadding: 15;
+$minWidth: 320px;
+$maxWidth: 1920;
+$maxWidthContainer: $containerPadding * 2 + $containerWidth;
+$md0: $maxWidthContainer + 12;
+$md1: 1200;
+$md2: 991;
+$md3: 767;
+$md4: 479;
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===================================
+@import "null";
+
+html {
+	--color-green:			#378F95;
+	--color-green-hover:	#57b4bb;
+	--color-light-green: #F1F7F7;
+	--color-dark-green:	#1a575b;
+	--color-yellow:      #FAE41E; 
+	--color-orange:		#E35946;
+	--color-orange-hover:#ee8476;
+	--color-dark:			#54514E;
+	--color-light:			#AFAFAF;
+
+	&._blind {
+		--color-green:			#1a575b;
+		--color-green-hover:	#378F95;
+		--color-light-green: #1a575b;
+		--color-dark-green:	#06363a;
+		--color-yellow:      #ff1f00; 
+		--color-orange:		#f04028;
+		--color-orange-hover:#ff1f00;
+		--color-dark:			#000000;
+		--color-light:			#000000;
+
+		font-size: 150%;
+	}
+}
+
+body {
+	background: #E8F1F1;
+	color: var(--color-dark);
+	font-size: rem(15);
+	line-height: prc(21, 15);
+	&._lock {
+		overflow: hidden;
+	}
+	._blind & {
+		font-weight: 700;
+	}
+
+	//---------------------------------------------------------------
+
+	a {
+		transition: all 0.3s ease 0s;
+		color: var(--color-green);
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-green);
+			}
+		}
+	}
+
+	//---------------------------------------------------------------
+
+	.h1,
+	h1 a,
+	h1 {
+		font-weight: 500;
+		font-size: rem(36);
+		line-height: prc(42, 36);
+		color: #000000;
+	}
+	.h2,
+	h2 a,
+	h2 {
+		font-weight: 500;
+		font-size: rem(36);
+		line-height: prc(42, 36);
+		color: #000000;
+	}
+	.h3,
+	h3 a,
+	h3 {
+		font-weight: 500;
+		color: #000000;
+		font-size: rem(28);
+		line-height: prc(33, 28);
+	}
+	.h4,
+	h4 a,
+	h4 {
+		color: #000000;
+		font-weight: 500;
+		font-size: rem(21);
+		line-height: prc(24, 21);
+	}
+	.h5,
+	h5 a,
+	h5 {
+		color: #000000;
+		font-size: rem(19);
+		line-height: prc(21, 19);
+	}
+
+	//---------------------------------------------------------------
+
+	._special-styles {
+		h1, h2, h3, h4, h5, h6 {
+			margin: 0px 0px 1rem 0px;
+		} 
+		figure {
+			display: inline-block;
+		}
+		p {
+			margin: 0px 0px rem(20) 0px;
+		}
+		ul {
+			padding: 0px 0px 0px rem(22);
+			margin: 0px 0px rem(15) 0px;
+			li {
+				position: relative;
+				line-height: 150%;
+				margin: 0px 0px rem(10) 0px;
+				& > ul, & > ol {
+					padding-top: rem(10);
+				}
+				&::before {
+					content: '';
+					position: absolute;
+					top: rem(9.5);
+					left: rem(-12);
+					width: rem(3);
+					height: rem(3);
+					background: var(--color-dark);
+					border-radius: 50%;
+				}
+			}
+		}
+		ol {
+			padding: rem(10) 0px 0px rem(22);
+			margin: 0px 0px rem(15) 0px;
+			li {
+				line-height: 150%;
+				margin: 0px 0px rem(10) 0px;
+				& > ul, & > ol {
+					padding-top: rem(10);
+				}
+				&::marker {
+					font-weight: 700;
+					color: #000;
+				}
+			}
+		}
+		img {
+			border-radius: rem(10);
+			overflow: hidden;
+		}
+		.table-wrapper {
+			width: 100%;
+			overflow-x: auto;
+			table {
+				border-collapse: collapse;
+				margin: 0px 0px rem(40) 0px;
+				@media (max-width: ($md3+'px')) {
+					margin: 0px 0px rem(20) 0px;
+				}
+				tr{
+					th{
+						font-size: rem(16);
+						font-weight: 400;
+						background: #E8F1F1;
+						padding: rem(10) rem(10);
+						border: 1px solid rgba(132, 157, 158, 0.3);
+						color: #000;
+						p {
+							margin: 0;
+						}
+					}
+					td {
+						background: rgba(255, 255, 255, 0.5);
+						border: 1px solid rgba(132, 157, 158, 0.3);
+						padding: rem(10) rem(10);
+						
+						p:last-child {
+							margin-bottom: 0px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>==================================
+
+//<ОБОЛОЧКА>=====================================================
+.wrapper {
+	width: 100%;
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	&._loaded {
+	}
+}
+//</ОБОЛОЧКА>====================================================
+
+//<ОСНОВНАЯ СЕТКА>===============================================
+._container {
+	max-width: rem($maxWidthContainer);
+	padding: 0px $containerPadding + px;
+	margin: 0 auto;
+}
+//</ОСНОВНАЯ СЕТКА>==============================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>=========
+@import "forms";
+@import "ui";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>========
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>================
+@import "swiper";
+@import "choices";
+@import "lightgallery";
+@import "header";
+@import "footer";
+@import "modal";
+@import "page";
+@import "home";
+@import "news";
+@import "pagging";
+@import "doctors";
+@import "accordionmenu";
+@import "table";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>===============
+
+//<ОСНОВНОЙ БЛОК>================================================
+.page {
+	flex: 1 1 auto;
+	// .page__slider
+	&__slider {
+		margin: 0px 0px rem(90) 0px;
+		@media (max-width: ($md1+'px')) {
+			margin: 0px 0px rem(50) 0px;
+		}
+		@media (max-width: ($md3+'px')) {
+			display: none;
+		}
+	}
+	// .page__actions
+	&__actions {
+		margin: 0px 0px rem(80) 0px;
+		@media (max-width: ($md1+'px')) {
+			margin: 0px 0px rem(40) 0px;
+		}
+	}
+	// .page__rubricator
+	&__rubricator {
+		margin: 0px 0px rem(80) 0px;
+		@media (max-width: ($md1+'px')) {
+			margin: 0px 0px rem(40) 0px;
+		}
+	}
+	// .page__news
+	&__news {
+		margin: 0px 0px rem(80) 0px;
+		@media (max-width: ($md1+'px')) {
+			margin: 0px 0px rem(40) 0px;
+		}
+	}
+	// .page__map
+	&__map {
+		margin: 0px 0px rem(80) 0px;
+		@media (max-width: ($md1+'px')) {
+			margin: 0px 0px rem(40) 0px;
+		}
+	}
+	// .page__inner
+	&__inner {
+		margin: 0px 0px rem(80) 0px;
+		@media (max-width: ($md1+'px')) {
+			margin: 0px 0px rem(40) 0px;
+		}
+	}
+}
+
+//===============================================================
+
+.photos {
+	display: grid;
+	grid-gap: rem(30);
+	grid-template-columns: repeat(var(--column-count), 1fr);
+	@media (max-width: em($md0)) {
+		grid-template-columns: repeat(auto-fill, minmax(rem(335), 1fr));
+	}
+	@media (max-width: em($md4)) {
+		grid-template-columns: repeat(auto-fill, minmax(rem(250), 1fr));
+	}
+	// .photos__photo
+	&__photo {
+		position: relative;
+		height: 0;
+		box-shadow: 0px 0px rem(20) rem(-4) rgb(0 0 0 / 25%);
+		border-radius: rem(10);
+		overflow: hidden;
+		padding: 0px 0px 60% 0px;
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				box-shadow: 0px 0px rem(30) rem(-4) rgb(0 0 0 / 25%);
+				transform: scale(1.03);
+			}
+		}
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+		}
+	}
+}
+
+//===============================================================
+
+.move-up {
+	width: rem(50);
+	height: rem(50);
+	border-radius: 50%;
+	background-color: var(--color-green);
+	position: fixed;
+	bottom: rem(20);
+	right: rem(20);
+	color: #fff;
+	opacity: 0;
+	visibility: 0;
+	transition: opacity 0.3s, background-color 0.3s;
+	z-index: 50;
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--color-green-hover);
+		}
+	}
+	&._scroll {
+		opacity: 1;
+		visibility: 1;
+	}
+	@media (max-width: 450px) {
+		width: rem(30);
+		height: rem(30);
+		font-size: rem(14);
+	}
+	&::before, 
+	&:after {
+		content: '';
+		position: absolute;
+    height: rem(3);
+		width: rem(20);
+		top: 50%;
+		left: 50%;
+		background: #fff;
+		border-radius: rem(2);
+		@media (max-width: ($md4+'px')) {
+			height: rem(2);
+			width: rem(10);
+		}
+	}
+	&::before {
+		transform: translate(calc(-50% + rem(6.5)), -50%) rotate(45deg);
+		@media (max-width: ($md4+'px')) {
+			transform: translate(calc(-50% + rem(3)), -50%) rotate(45deg);
+		}
+	} 
+	&:after {
+		@media (max-width: ($md4+'px')) {
+			transform: translate(calc(-50% - rem(3)), -50%) rotate(-45deg);
+		}
+		transform: translate(calc(-50% - rem(6.5)), -50%) rotate(-45deg);
+	}
+}
+
+
+//===============================================================
+._blind {
+   input, textarea {
+      font-weight: 700;
+   }
+}

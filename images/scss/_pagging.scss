@@ -1,0 +1,74 @@
+.pagging {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: rem(30) 0px 0px 0px;
+	// .pagging__arrow
+	&__arrow {
+		display: inline-block;
+		text-align: center;
+		margin: 0px 0px rem(16) 0px;
+		padding-top: 2px;
+		color: var(--color-orange);
+		width: rem(30);
+		height: rem(30);
+		border-radius: 50%;
+		box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.15);
+		transform: translate(0, 2px);
+		transition: all 0.3s ease 0s;
+		// .pagging__arrow_prev
+		&_prev {
+			margin-right: rem(20);
+		}
+		// .pagging__arrow_next
+		&_next {
+			margin-left: rem(20);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-orange);
+				color: #fff;
+			}
+		}
+		&._active {
+			background: var(--color-orange);
+			color: #fff;
+		}
+	}
+	// .pagging__list
+	&__list {
+		display: flex;
+	}
+	// .pagging__item
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0px rem(8) rem(16);
+	}
+	// .pagging__link
+	&__link {
+		display: flex;
+    align-items: center;
+    justify-content: center;
+		padding-top: rem(2);
+		color: #fff;
+		background: var(--color-green);
+		width: rem(35);
+		height: rem(35);
+		border-radius: 50%;
+		transform: translate(0, rem(2));
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background: var(--color-orange);
+				color: #fff;
+			}
+		}
+		&._active {
+			background: var(--color-orange);
+			color: #fff;
+		}
+	}
+}

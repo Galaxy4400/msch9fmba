@@ -1,0 +1,53 @@
+<form class="order-form _goto-error" id='cabinet_form' name="register" method="post" action="./">
+	<input type="hidden" name="action" value="cabinet">
+	<input type="hidden" name="actionSub" value="update">
+
+	<div class="order-form__row">
+		<h2 class="order-form__title">Редактирование данных пользователя</h2>
+	</div>
+	<div class="order-form__body">
+		<label class="order-form__input">
+			<div class="order-form__label">Имя</div>
+			<input class="input" type="text" name="Name" data-value="<!--%Name%-->">
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Фамилия</div>
+			<input class="input" type="text" name="Surname" data-value="<!--%Surname%-->"> 
+		</label>
+		<label class="order-form__input order-form__input_big">
+			<div class="order-form__label">Название компании (необязательно)</div>
+			<input class="input" type="text" name="CompanyName" data-value="<!--%CompanyName%-->">
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Страна / Регион</div>
+			<input class="input" type="text" name="Country" data-value="<!--%Country%-->"> 
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Область / Район</div>
+			<input class="input" type="text" name="Area" data-value="<!--%Area%-->"> 
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Населенный пункт</div>
+			<input class="input" type="text" name="City" data-value="<!--%City%-->"> 
+		</label>
+		<label class="order-form__input order-form__input_big">
+			<div class="order-form__label">Адрес</div>
+			<input class="input" type="text" name="Address" data-value="<!--%Address%-->">
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Почтовый индекс</div>
+			<input class="input" type="text" name="Zip" data-value="<!--%Zip%-->"> 
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">Телефон</div>
+			<input class="input" type="text" name="Phone" data-value="<!--%Phone%-->">
+		</label>
+		<label class="order-form__input">
+			<div class="order-form__label">E-mail</div>
+			<input class="input" type="text" name="Email" data-value="<!--%Email%-->">
+		</label>
+		<div class="order-form__bottom">
+			<button class="order-form__btn btn" type="submit">Изменить данные</button>
+		</div>
+	</div>
+</form>
